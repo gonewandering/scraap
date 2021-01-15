@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "patch": "git add . & git commit & npm version patch & git push origin",
+    "minor": "git add . && git commit && npm version minor && git push origin"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@google-cloud/language": "^4.2.1",
+    "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.5",
-    "puppeteer": "^5.5.0",
-    "request-promise-native": "^1.0.9"
+    "puppeteer": "^5.5.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
