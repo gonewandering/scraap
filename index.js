@@ -3,11 +3,11 @@ const entities = require('./lib/entities')
 
 async function scrape(cnf) {
   let $ = await page(cnf.url)
-  let text = $(cnf.contentPath || 'body')
-  let entities = await entities(text)
+  let content = $(cnf.contentPath || 'body')
+  let entities = await entities({ content })
 
   return {
-    text,
+    content,
     entities,
     $
   }
